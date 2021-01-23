@@ -1,0 +1,22 @@
+backend:
+  name: github
+  repo: sergeyyarkov/gatsby-test-blog
+  branch: main
+locale: 'ru'
+media_folder: static/assets
+public_folder: /assets
+
+collections:
+  - name: articles
+    label: Article
+    folder: content/articles
+    slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
+    create: true
+    fields:
+      - { label: "Template Key", name: "templateKey", widget: "hidden", default: "article" }
+      - { label: "Имя URL", name: "slug", widget: "string" }
+      - { label: "Заголовок", name: "title", widget: "string" }
+      - { label: "Дата публикации", name: "date", widget: "datetime" }
+      - { label: "Обложка", name: "image", widget: "image" }
+      - { label: "Описание", name: "description", widget: "text"}
+      - { label: "Содержание", name: "body", widget: "markdown" }
